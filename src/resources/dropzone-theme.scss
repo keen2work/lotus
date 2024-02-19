@@ -1,0 +1,263 @@
+.dropzone {
+  border: 2px dashed #CCC;
+  border-radius: 10px;
+  min-height: 150px;
+
+  .dz-message {
+    color: #888;
+    text-align: center;
+    padding: 60px 0;
+
+    &:before {
+      content: "\f574";
+      font-family: "Font Awesome 5 Free";
+      font-size: 24px;
+      display: none;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .dz-preview {
+    .dz-success-mark, .dz-error-mark {
+      border-radius: 12px;
+      display: none;
+      height: 24px;
+      position: relative;
+      width: 24px;
+
+      svg {
+        height: 24px;
+        left: 0;
+        opacity: 0.8;
+        position: absolute;
+        top: 0;
+        width: 24px;
+      }
+    }
+
+    .dz-success-mark {
+    }
+
+    .dz-error-mark {
+      background: #dc3545;
+    }
+
+    &.dz-success {
+      .dz-success-mark {
+        display: block;
+      }
+    }
+
+    &.dz-error {
+      .dz-error-mark {
+        display: none;
+      }
+    }
+  }
+
+  input {
+    display: block;
+    height: 0;
+    width: 0;
+  }
+
+  &.dz-clickable {
+    cursor: pointer;
+  }
+
+  &.dz-started {
+    .dz-message {
+      padding: 10px 0 20px;
+    }
+  }
+
+  // LIST VIEW
+  &.list {
+    .dz-preview {
+      margin: 0 1rem 1rem;
+      position: relative;
+
+      .dz-image {
+        float: left;
+        height: 80px;
+        width: 80px;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .dz-details {
+        margin-left: 100px;
+
+        .dz-filename {
+          color: #888;
+          font-size: small;
+        }
+      }
+
+      .dz-progress {
+        background-color: #DDD;
+        height: 3px;
+        margin-left: 100px;
+        margin-top: 4px;
+
+        .dz-upload {
+          background-color: #28a745;
+          display: block;
+          height: 3px;
+        }
+      }
+
+      .dz-error-message {
+        font-size: small;
+        margin: 10px 0 0 100px;
+      }
+
+      .dz-remove {
+        display: inline-block;
+        font-size: small;
+        margin-left: 20px;
+      }
+
+      &:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+      }
+
+      &.dz-error {
+        opacity: 0.6;
+        .dz-progress {
+          .dz-upload {
+            background-color: #dc3545;
+          }
+        }
+      }
+    }
+
+    .dz-success-mark, .dz-error-mark {
+      left: 64px;
+      position: absolute;
+      top: -6px;
+    }
+  }
+
+  // GALLRY VIEW
+  &.gallery {
+    .dz-preview {
+      display: inline-block;
+      height: 80px;
+      margin: 0 1rem 1rem;
+      position: relative;
+      width: 80px;
+
+      .dz-image {
+        float: left;
+        height: 80px;
+        width: 80px;
+
+        img {
+          border-radius: 6px;
+          max-width: 100%;
+        }
+      }
+
+      .dz-details {
+        background: #333;
+        border-radius: 4px;
+        color: #FFF;
+        display: none;
+        font-size: 11px;
+        margin-left: 90px;
+        padding: 4px 8px;
+        position: absolute;
+
+        .dz-filename {
+          color: #888;
+          font-size: small;
+        }
+      }
+
+      .dz-progress {
+        background-color: #DDD;
+        border-radius: 2px;
+        bottom: 4px;
+        height: 3px;
+        left: 5%;
+        position: absolute;
+        width: 90%;
+
+        .dz-upload {
+          background-color: #28a745;
+          border-radius: 2px;
+          display: block;
+          height: 3px;
+        }
+      }
+
+      .dz-error-message {
+        font-size: small;
+        margin: 10px 0 0 100px;
+      }
+
+      .dz-remove {
+        display: block;
+        font-size: 0;
+        position: absolute;
+        right: 4px;
+        text-decoration: none;
+        top: 4px;
+
+        &:after {
+          background: #fff;
+          border: 1px solid #dc3545;
+          border-radius: 10px;
+          color: #dc3545;
+          content: "Ã—";
+          display: block;
+          font-size: 16px;
+          height: 20px;
+          line-height: 16px;
+          text-align: center;
+          width: 20px;
+        }
+      }
+
+      &:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+      }
+
+      &.dz-error {
+        opacity: 0.6;
+        .dz-progress {
+          .dz-upload {
+            background-color: #dc3545;
+          }
+        }
+      }
+
+      &:hover {
+        .dz-details {
+          display: block;
+          z-index: 1000;
+        }
+      }
+    }
+
+    .dz-success-mark, .dz-error-mark {
+      left: 28px;
+      position: absolute;
+      top: 28px;
+    }
+  }
+}
